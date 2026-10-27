@@ -35,17 +35,34 @@
 <li>İznini istediğin zaman <strong>☰ → Ayarlar → Asistan (Google Gemini)</strong> anahtarından geri alabilirsin; o andan sonra asistana yazdığın hiçbir şey gönderilmez.</li>
 </ul>
 
+<h2>Mailden görev (Termin Premium)</h2>
+<ul>
+<li>Bu özellik yalnızca Termin Premium aboneliğinle ve <strong>ayrıca verdiğin mail işleme izniyle</strong> çalışır. İzin vermezsen Termin'in geri kalanı aynen çalışır.</li>
+<li>Özelliği açarsan sana özel bir Termin mail adresi oluşturulur. Sadece kendi mail hesabından bu adrese yönlendirdiğin mailler alınır; mail kutuna erişmeyiz, hesabına bağlanmayız.</li>
+<li>Gelen mailler Supabase sunucularımıza (Almanya, Frankfurt) iletilir ve görev önerisi çıkarmak için Google Gemini'ye (yurt dışı) gönderilir. Çıkan öneriler sen onaylamadan görevlerine eklenmez.</li>
+<li>Mailin ham hâli 30 gün sonra silinir. Gönderen, konu ve öneri kayıtları 90 gün, Gmail yönlendirme onay kodları 7 gün sonra silinir.</li>
+<li>İznini ve adresini ☰ → Ayarlar → Mailden görev'den geri alabilir, özelliği kapatabilirsin. Banka, sağlık ve şifre maillerini yönlendirmemeni öneririz.</li>
+</ul>
+
+<h2>Abonelik ve ödeme</h2>
+<ul>
+<li>Termin Premium ödemesi Apple (App Store) veya Google (Google Play) tarafından alınır; Termin kart bilgini görmez.</li>
+<li>Aboneliğinin durumu (aktif mi, ne zaman yenileneceği) RevenueCat aracılığıyla hesabına işlenir. RevenueCat'e yalnızca hesap kimliğin ve satın alma bilgisi gider.</li>
+</ul>
+
 <h2>Yurt dışına aktarım ve açık rıza (KVKK)</h2>
 <ul>
 <li>Kayıt olurken, hesap ve görev verilerinin Almanya'daki sunucularda saklanmasına <strong>açık rızanı</strong> isteriz. Bu olmadan Termin çalışamaz.</li>
-<li>Asistan metinlerinin Google'a aktarılması için ayrı ve isteğe bağlı açık rızan istenir (yukarıda).</li>
+<li>Asistan metinlerinin ve Mailden görev için yönlendirdiğin maillerin Google'a aktarılması için ayrı ve isteğe bağlı açık rızan istenir (yukarıda).</li>
 <li>KVKK kapsamındaki bilgi alma, düzeltme, silme ve rızanı geri alma gibi hakların için <a href="mailto:destek@usetermin.com">destek@usetermin.com</a> adresine yazabilirsin.</li>
 </ul>
 
 <h2>Verileri kimlerle paylaşıyoruz</h2>
 <ul>
 <li><strong>Supabase:</strong> verilerin saklandığı altyapı sağlayıcısı (sunucular Almanya'da).</li>
-<li><strong>Google (Gemini API):</strong> sadece izin verdiysen, asistana yazdığın metin.</li>
+<li><strong>Google (Gemini API):</strong> sadece izin verdiysen, asistana yazdığın metin ve Mailden görev için yönlendirdiğin mailler.</li>
+<li><strong>Cloudflare:</strong> Mailden görev adresine gelen maillerin alınıp sunucumuza iletilmesi.</li>
+<li><strong>RevenueCat:</strong> Premium aboneliğinin durumunu takip etmek için hesap kimliğin ve satın alma bilgisi.</li>
 <li><strong>E-posta servisi (Brevo):</strong> sadece kayıt onay kodu ve şifre sıfırlama mailleri için e-posta adresin.</li>
 <li><strong>Apple / Google:</strong> uygulamanın dağıtımı. Hatırlatıcılar telefonunda yerel olarak oluşturulur; şu an uzaktan anlık bildirim (push) servisi kullanılmıyor.</li>
 </ul>
@@ -68,8 +85,10 @@
 <p><strong>What we collect:</strong> your email, name and password (hashed); your tasks, groups, claims and email invites; group chat messages (visible only to group members, deleted after 24 hours); reported messages (a copy kept for review) and your block list (visible only to you); feedback you send us; your daily puzzle start/solve times (shown in your groups' rankings) and pokes; which days you opened the app and how often some features are used (only to improve the app); whether you consented to the assistant and when.</p>
 <p><strong>Where it's stored:</strong> with Supabase, on servers in Germany (Frankfurt, AWS eu-central-1). Calendar links, Buki, notification settings, language and reminders stay on your phone.</p>
 <p><strong>Assistant and Google Gemini:</strong> we ask for separate consent before the assistant is used. If you agree, what you type or paste is sent to Google's Gemini API (servers abroad) to propose tasks; we don't store that text, only how many questions you asked that day. Termin currently uses the Gemini API free tier; under Google's terms, content sent on the free tier may be used to improve Google's products and may be reviewed by people at Google, so don't enter sensitive information. You can withdraw consent any time in ☰ → Settings → Assistant (Google Gemini); without it everything else keeps working.</p>
+<p><strong>Tasks from mail (Termin Premium):</strong> works only with a Premium subscription and a separate consent. You get a personal Termin address; only mail you forward to it is received (we never access your mailbox). Forwarded mail goes to our servers in Germany (via Cloudflare) and to Google Gemini to suggest tasks; nothing is added without your approval. Raw mail is deleted after 30 days, sender/subject and suggestions after 90 days, Gmail confirmation codes after 7 days. Turn it off any time in Settings → Tasks from mail.</p>
+<p><strong>Subscriptions:</strong> payment is handled by Apple or Google; we never see your card. Subscription status is synced via RevenueCat (account id and purchase info only).</p>
 <p><strong>Explicit consent (KVKK):</strong> at sign-up we ask for your explicit consent to store your data on servers in Germany; sending assistant text to Google needs a separate, optional consent. To use your rights (access, correction, deletion, withdrawing consent) email <a href="mailto:destek@usetermin.com">destek@usetermin.com</a>.</p>
-<p><strong>Sharing:</strong> only Supabase (storage), Google Gemini (assistant text, with consent) and Brevo (sign-up and password emails). No ads, no tracking across other apps or sites, no selling data. Delete your account in ☰ → Settings → Delete my account (see <a href="hesap-silme.html">account deletion</a>). Not intended for children under 13.</p>
+<p><strong>Sharing:</strong> only Supabase (storage), Google Gemini (assistant text and forwarded mail, with consent), Cloudflare (receiving forwarded mail), RevenueCat (subscription status) and Brevo (sign-up and password emails). No ads, no tracking across other apps or sites, no selling data. Delete your account in ☰ → Settings → Delete my account (see <a href="hesap-silme.html">account deletion</a>). Not intended for children under 13.</p>
 </main>
 <footer class="wrap"><div><a href="gizlilik.html">Gizlilik politikası</a><a href="kosullar.html">Kullanım koşulları</a><a href="aydinlatma.html">KVKK Aydınlatma</a><a href="hesap-silme.html">Hesap silme</a><a href="destek.html">Destek</a><a href="mailto:destek@usetermin.com">destek@usetermin.com</a></div><div>© 2026 Termin</div></footer>
 </body></html>
